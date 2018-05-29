@@ -15,6 +15,9 @@ class PhotoController extends Controller
     public function index()
     {
         //
+        // return redirect()->action('Test\UserController@profile',['id'=>143]);
+        // return response()->download(__FILE__);
+        return view('photo.greeting')->with('name', 'Victoria')->with('gender','male');
     }
 
     /**
@@ -22,9 +25,13 @@ class PhotoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request )
     {
         //
+        return response()
+        ->jsonp($request->input('callback'), ['name' => 'Abigail', 'state' => 'CA']);
+        // return redirect()->away('http://laravelacademy.org');
+        // return redirect()->route('user/index', ['id' => 1]);
     }
 
     /**

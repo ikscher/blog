@@ -36,4 +36,10 @@ class Article
         return $article;
 
     }
+
+
+    public static function count(){
+        $count = DB::table('lzh_article')->count();
+        return $count;
+    }
 }

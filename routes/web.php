@@ -11,6 +11,7 @@
 |
 */
 // use Illuminate\Support\Facades\Cache;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -46,11 +47,37 @@ Route::get('/array', function () {
 // Route::get('log/index/{id}', 'Test\UserController@Log');
 
 Route::resource('photos', 'PhotoController');
+Route::get('photo/index', 'Photo\PhotoController@index');
+Route::get('photo/create', 'Photo\PhotoController@create');
 Route::get('user/profile/{id}', 'Test\UserController@profile');
+Route::get('post/show/{id}', 'Test\PostController@show');
+Route::get('post/index', 'Test\PostController@index');
+// Route::get('post/store/{id}', 'Test\PostController@store');
 
 Route::get('home', function () {
     return response('Hello World', 200)
                   ->header('Content-Type', 'text/plain');
+    
 });
+
+Route::get('cookie/response', function () {
+	Cookie::queue(Cookie::make('site', 'Laravel学院',1));
+    Cookie::queue('author', '学院君', 1);
+    return response('Hello World', 200)
+        ->header('Content-Type', 'text/plain');
+});
+
+
+Route::get('/vi/{post}', function () {
+    return 'aaa';
+})->name('vi.show');
+
+Route::get('/unsubscribe/{user}', function (Request $request) {
+    // if (! $request->hasValidSignature()) {
+    //     abort(404);
+    // }
+
+    // ...
+})->name('unsubscribe')->middleware('signed');
 
 
