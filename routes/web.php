@@ -12,12 +12,14 @@
 */
 // use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('user/index/{id}', 'Test\UserController@show');
+Route::get('bid/index', 'Test\BidController@index');
 Route::get('article/index/{id}', 'Test\ArticleController@show');
 Route::get('photo/store', 'Photo\PhotoController@store');
 
@@ -80,4 +82,7 @@ Route::get('/unsubscribe/{user}', function (Request $request) {
     // ...
 })->name('unsubscribe')->middleware('signed');
 
-
+Route::get('publish', function () {
+    // Route logic...
+    Redis::publish('test-channel', json_encode(['foo' => 'bar']));
+});

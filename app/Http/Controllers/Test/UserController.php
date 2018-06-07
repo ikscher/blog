@@ -21,7 +21,13 @@ class UserController extends Controller
       //         echo $user->user_name.'<br/>';
       //     }
       // });
-        //return view('user.profile', ['user' => $user]);
+      // $exist=DB::table('lzh_ad')->where('ad_type', 2)->exists();
+      // $ad=DB::table('lzh_ad')->selectRaw('id * ? as price_with_tax', [1.0825])->get();//id is the column name,'?' stand for argument(1.0825)
+        // $c=DB::table('lzh_ad')->where([['content->img','=', 'abc'],['id','=',2]])->get();//ERROR
+        $users = DB::table('members')->paginate(15);
+       
+   
+        return view('user.profile', ['users' => $users]);
         // return view('user.profile', ['email' => $email]);
     }
 

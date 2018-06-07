@@ -29,7 +29,7 @@ class Article
 
 
     public static function getArticle($id){
-        $article = DB::table('lzh_article')->where([
+        $article = DB::table('article')->where([
             ['id', '=', $id]
         ])->get();
         
@@ -39,7 +39,7 @@ class Article
 
 
     public static function count(){
-        $count = DB::table('lzh_article')->count();
+        $count = DB::table('article')->count();
         return $count;
     }
 }
