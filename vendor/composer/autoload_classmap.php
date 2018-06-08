@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\RedisSubscribe' => $baseDir . '/app/Console/Commands/RedisSubscribe.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -15,6 +16,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Photo\\PhotoController' => $baseDir . '/app/Http/Controllers/Photo/PhotoController.php',
     'App\\Http\\Controllers\\Test\\ArticleController' => $baseDir . '/app/Http/Controllers/Test/ArticleController.php',
+    'App\\Http\\Controllers\\Test\\BidController' => $baseDir . '/app/Http/Controllers/Test/BidController.php',
     'App\\Http\\Controllers\\Test\\PostController' => $baseDir . '/app/Http/Controllers/Test/PostController.php',
     'App\\Http\\Controllers\\Test\\UserController' => $baseDir . '/app/Http/Controllers/Test/UserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -25,6 +27,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\ViewComposers\\ProfileComposer' => $baseDir . '/app/Http/ViewComposers/ProfileComposer.php',
     'App\\Model\\Article' => $baseDir . '/app/Model/Article.php',
+    'App\\Model\\BidInfo' => $baseDir . '/app/Model/BidInfo.php',
     'App\\Model\\User' => $baseDir . '/app/Model/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

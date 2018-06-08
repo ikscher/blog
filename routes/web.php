@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('user/index/{id}', 'Test\UserController@show');
+Route::get('member/index', 'Test\MemberController@show');
 Route::get('bid/index', 'Test\BidController@index');
 Route::get('article/index/{id}', 'Test\ArticleController@show');
 Route::get('photo/store', 'Photo\PhotoController@store');
